@@ -36,6 +36,35 @@ document.addEventListener("keydown", (event) => { // The event param provides an
     out_key.textContent = var_key;
     key_input.textContent = var_key;
 
+    var div_keys = document.querySelectorAll('.key_fb');
+    div_keys.forEach((item) => {
+        item.classList.remove('enlarge');
+    });
+
+    console.log(div_keys[0]);
+    console.log(div_keys[1]);
+    console.log(div_keys[2]);
+    console.log(div_keys[3]);
+    console.log(div_keys[4]);
+
+    switch (var_key){
+        case 'Shift':
+            div_keys[0].classList.add('enlarge');
+            break;
+        case 'Control':
+            div_keys[1].classList.add('enlarge');
+            break;
+        case 'Meta':
+            div_keys[2].classList.add('enlarge');
+            break;
+        case 'Alt':
+            div_keys[3].classList.add('enlarge');
+            break;
+        default:
+            div_keys[4].classList.add('enlarge');
+            break;
+    }
+
 });
 
 document.addEventListener("keyup", (event) => { 
