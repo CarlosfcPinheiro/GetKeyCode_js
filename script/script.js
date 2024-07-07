@@ -41,12 +41,6 @@ document.addEventListener("keydown", (event) => { // The event param provides an
         item.classList.remove('enlarge');
     });
 
-    console.log(div_keys[0]);
-    console.log(div_keys[1]);
-    console.log(div_keys[2]);
-    console.log(div_keys[3]);
-    console.log(div_keys[4]);
-
     switch (var_key){
         case 'Shift':
             div_keys[0].classList.add('enlarge');
