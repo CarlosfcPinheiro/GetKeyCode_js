@@ -1,0 +1,234 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    font-family: 'Chillax', sans-serif;
+    color: #161616;
+
+    width: 100%;
+    height: 100vh;
+}
+
+:root{
+    --bg-color: #FFFAFA;
+    --primary-color: #070f2b8c;
+    --secondary-color: #1B1A558c;
+    --terciary-color: #535C918c;
+    --quaternary-color: #9290C38c;
+}
+
+body{
+    background-color: var(--bg-color);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 1rem;
+
+    .container-content{
+        padding-top: 3rem;
+        width: 30%;
+
+        .container-logo{
+            padding-bottom: 4rem;
+            display: flex;
+
+            flex-direction: row;
+            align-items: center;
+            gap: 0.5rem;
+
+            #img-keyboard{
+                position: relative;
+            }
+
+            #img-keyboard.down{
+                animation-name: keyboard_down;
+                animation-duration: 0.1s;
+
+                top: 0.7rem;
+            }
+
+            #img-keyboard.up{
+                animation-name: keyboard_up;
+                animation-duration: 0.1s;
+
+                top: 0rem;
+            }
+        }
+        .content-input{
+
+            input{
+                width: 100%;
+                height: 2.5rem;
+
+                outline: none;
+                
+                margin-top: 0.3rem;
+
+                border-radius: 0.3rem;
+                border: none;
+
+                box-shadow: 1px 1px 3px #1f1f1f;
+
+            }
+
+            input:focus, input[type=text]{
+                font-family: 'Chillax', sans-serif;
+                padding-left: 0.5rem;
+
+                font-weight: 500;
+                font-size: 16px;
+            }
+
+            .content-keys{
+                padding-top: 1rem;
+                display: flex;
+                
+                gap: 0.5rem;
+                #key{
+                    width: 5rem;
+                    height: 3.5rem;
+
+                    border: 0.1rem solid #d3d3d3;
+                    border-radius: 0.4rem;
+    
+                    background-color: #ffffff;
+
+                    font-size: 12px;
+
+                    display: flex;
+                    justify-content: center;
+
+                    .key-content{
+                        width: 85%;
+
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+
+                        gap: 0.2rem;
+
+                        h4{
+                            font-size: 20px;
+                            height: 2rem;
+                        }
+                        #key-input{
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .container-output{
+        padding-top: 1rem;
+
+        display: flex;
+        flex-direction: row;
+
+        gap: 1rem;
+
+        .box-output{
+            width: 12vw;
+            height: 4.5rem;
+
+            border-radius: 0.2rem;
+
+            background-color: #ffffff;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            gap: 1rem;
+            p, h4{
+                padding-left: 0.5rem;
+                height: 1.5rem;
+            }
+
+            h4{
+                font-size: 14px;
+            }
+
+            p{
+                padding-bottom: 0.4rem;
+                font-weight: 600;
+                font-size: 13px;
+            }
+        }
+    }
+
+    .container-output:hover{
+        cursor: copy;
+    }
+
+    .container-text{
+        width: 30%;
+        p{
+            color: #383838;
+            font-size: 12px;
+        }
+
+    }
+}
+
+#key.enlarge{
+    animation-name: size_animation;
+    animation-duration: 0.3s;
+
+    box-shadow: 1px 1px 4px #161616;
+}
+
+@keyframes size_animation{
+    to{
+        scale: 1;
+    }
+    from{
+        scale: 1.05;
+    }
+}
+
+/* Box Shadows on the key outputs */
+#key-output{
+    box-shadow: 1px 1px 3px var(--primary-color),
+    -1px -1px 3px var(--primary-color);
+}
+
+#code{
+    box-shadow: 1px 1px 3px var(--secondary-color),
+    -1px -1px 3px var(--secondary-color);
+}
+
+#which{
+    box-shadow: 1px 1px 3px var(--terciary-color),
+    -1px -1px 3px var(--terciary-color);
+}
+
+#keyCode{
+    box-shadow: 1px 1px 3px var(--quaternary-color),
+    -1px -1px 3px var(--quaternary-color);
+}
+
+/* Animations */
+@keyframes keyboard_down{
+    from{
+        top: 0rem;
+    }
+    to{
+        top: 0.5rem;
+    }
+}
+
+@keyframes keyboard_up{
+    from{
+        top: 0.5rem;
+    }
+    to{
+        top: 0rem;
+    }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://api.fontshare.com/v2/css?f[]=chillax@400,500,600,700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="styles/style.css">
+
+    <title>GetCode</title>
+</head>
+<body>
+    <div class="container-content">
+        <div class="container-logo">
+            <img id="img-keyboard" src="assets/keyboard-regular.svg" alt="" style="width: 2.5rem;">
+            <h1>GetCode</h1>
+        </div>
+        <p>Get the key code of any key that you've pressed. More informations will be shwon:</p>
+        <div class="content-input">
+            <input type="text" placeholder="Enter any value here">
+
+            <div class="content-keys">
+                <div id="key" class="key_fb">
+                    <div class="key-content">
+                        <h4>⇧</h4>
+                        <p>Shift</p>
+                    </div>
+                </div>
+                <div id="key" class="key_fb">
+                    <div class="key-content">
+                        <h4>^</h4>
+                        <p>Ctrl</p>
+                    </div>
+                </div>
+                <div id="key" class="key_fb">
+                    <div class="key-content">
+                        <h4>⌘</h4>
+                        <p>Meta</p>
+                    </div>
+                </div>
+                <div id="key" class="key_fb">
+                    <div class="key-content">
+                        <h4>⌥</h4>
+                        <p>Alt L</p>
+                    </div>
+                </div>
+                <div id="key" class="key_fb">
+                    <div class="key-content">
+                        <h4 id="key-input"></h4>
+                        <p>Key</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-output">
+        <div class="box-output" id="key-output">
+            <h4>e.key</h4>
+            <p id="return-key"></p>
+        </div>
+        <div class="box-output" id="code">
+            <h4>e.code</h4>
+            <p id="return-code"></p>
+        </div>
+        <div class="box-output" id="which">
+            <h4>e.which</h4>
+            <p id="return-which"></p>
+        </div>
+        <div class="box-output" id="keyCode">
+            <h4>e.keyCode</h4>
+            <p id="return-keyCode"></p>
+        </div>
+    </div>
+    <div class="container-text">
+        <p>Click on the value 2 times to copy!</p>
+    </div>
+</body>
+    <script src="script/script.js"></script>
+</html>
