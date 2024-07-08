@@ -1,13 +1,5 @@
 const list_box_output = document.getElementsByClassName('box-output');
-
-window.onload = () => { // Add an dblclick event for each box_output element
-    for (let i = 0; i < list_box_output.length; i++){
-        list_box_output[i].addEventListener("dblclick", () => {
-            console.log("I was clicked 2 times.");
-
-        });
-    }
-}
+console.log(list_box_output);
 
 const img_keyboard = document.getElementById('img-keyboard');
 
@@ -60,6 +52,25 @@ document.addEventListener("keydown", (event) => { // The event param provides an
     }
 
 });
+
+window.onload = () => { // Add an dblclick event for each box_output element
+    for (let i = 0; i < list_box_output.length; i++){
+        list_box_output[i].addEventListener("dblclick", () => {
+
+            let last_output = list_box_output[i].childNodes[3].textContent; 
+            list_box_output[i].childNodes[3].textContent = "Copied!";
+
+            navigator.clipboard.writeText(last_output); // Copy to the clipboard area through navigator objec
+
+            let show_copied = setInterval(() => {
+                list_box_output[i].childNodes[3].textContent = last_output;
+                clearInterval(show_copied);
+
+            }, 2000);
+
+        });
+    }
+}
 
 document.addEventListener("keyup", (event) => { 
     img_keyboard.src = "./assets/keyboard-regular.svg";
